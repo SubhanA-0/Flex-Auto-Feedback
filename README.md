@@ -2,7 +2,7 @@
  
 Automates the end-of-semester course evaluation process on the **FAST-NUCES FLEX** student portal.
  
-> Developed by **Subhan Ahmed** — BS AI, 24th Batch
+> Developed by **Subhan Ahmed** — 24th Batch
  
 ---
  
