@@ -1,15 +1,24 @@
 @echo off
 echo =====================================
-echo    Starting FLEX Feedback Automator  
+echo  FLEX Feedback Automator
 echo =====================================
 
-:: 1. Ensure required packages are installed
-echo Checking dependencies...
-pip install -q selenium webdriver-manager
+:: Check if venv exists
+if not exist "Python\python.exe" (
+    echo ERROR: Python folder not found.
+    echo Make sure you extracted the full zip folder.
+    echo.
+    pause
+    exit /b 1
+)
 
-:: 2. Launch the Tkinter App
-echo Launching UI...
-python main.py
+:: Run using embedded Python
+echo Launching...
+Python\python.exe main.py
 
-:: 3. Keep the window open if an error occurs
-pause
+:: Keep window open if an error occurs
+if %errorlevel% neq 0 (
+    echo.
+    echo Something went wrong. Screenshot this and contact the developer.
+    pause
+)
